@@ -14,4 +14,4 @@ RUN git clone https://github.com/kachind/beepminer/
 WORKDIR /app/beepminer
 RUN chmod +x miner start.sh
 
-ENTRYPOINT ["sh", "-c", "./start.sh -w \"$WALLET\" -p \"$POOL\" -c \"$CPU\""]
+ENTRYPOINT ["sh", "-c", "sudo ./start.sh -w \"$WALLET\" -p \"$POOL\" -c \"$CPU\""]
