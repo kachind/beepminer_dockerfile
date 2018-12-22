@@ -19,8 +19,8 @@ RUN sudo apt-get update
 
 WORKDIR /app
 
-RUN git clone https://github.com/kachind/beepminer/
+RUN sudo git clone https://github.com/kachind/beepminer/
 WORKDIR /app/beepminer
-RUN chmod +x miner start.sh
+RUN sudo chmod +x miner start.sh
 
 ENTRYPOINT ["sh", "-c", "sudo ./start.sh -w \"$WALLET\" -p \"$POOL\" -c \"$CPU\""]
