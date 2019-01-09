@@ -3,6 +3,7 @@ FROM ubuntu
 ENV CPU=0
 ENV WALLET="NQ65 X7M7 NM00 X0T8 DD88 L1RC UE8K TG2R S56D"
 ENV POOL="solo"
+ENV SEED=" "
 
 RUN apt-get update
 RUN apt-get upgrade -y
@@ -23,4 +24,4 @@ RUN sudo git clone https://github.com/kachind/beepminer/
 WORKDIR /app/beepminer
 RUN sudo chmod +x miner start.sh
 
-ENTRYPOINT ["sh", "-c", "sudo ./start.sh -w \"$WALLET\" -p \"$POOL\" -c \"$CPU\""]
+ENTRYPOINT ["sh", "-c", "sudo ./start.sh -w \"$WALLET\" -p \"$POOL\" -c \"$CPU\" -s \"$SEED\""]
